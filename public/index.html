@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="uk">
+<title>Ресторан San Remo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-camo.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+body, html {height: 100%}
+.menu {display: none}
+.bgimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("images/bg.png");
+  min-height: 90%;
+}
+
+.w3-btn {width:150px;}
+
+.w3-theme-l5 {color:#000 !important; background-color:#fdfcfb !important}
+.w3-theme-l4 {color:#000 !important; background-color:#f9f5f2 !important}
+.w3-theme-l3 {color:#000 !important; background-color:#f2ece5 !important}
+.w3-theme-l2 {color:#000 !important; background-color:#ece2d8 !important}
+.w3-theme-l1 {color:#000 !important; background-color:#e5d9cb !important}
+.w3-theme-d1 {color:#000 !important; background-color:#d1bba2 !important}
+.w3-theme-d2 {color:#000 !important; background-color:#c4a687 !important}
+.w3-theme-d3 {color:#fff !important; background-color:#b6926b !important}
+.w3-theme-d4 {color:#fff !important; background-color:#a67d52 !important}
+.w3-theme-d5 {color:#fff !important; background-color:#8a6844 !important}
+
+.w3-theme-light {color:#000 !important; background-color:#fdfcfb !important}
+.w3-theme-dark {color:#fff !important; background-color:#8a6844 !important}
+.w3-theme-action {color:#fff !important; background-color:#c4a687 !important}
+
+.w3-theme {color:#000 !important; background-color:#d1bba2 !important}
+.w3-text-theme {color:#8a6844 !important}
+.w3-border-theme {border-color:#dfcfbe !important}
+
+.w3-hover-theme:hover {color:#000 !important; background-color:#f2ece5 !important}
+.w3-hover-text-theme:hover {color:#8a6844 !important}
+.w3-hover-border-theme:hover {border-color:#dfcfbe !important}
+
+.city {display:none}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #b6926b;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #8a6844;
+}
+</style>
+
+<body id="myPage">
+<button onclick="topFunction()" id="myBtn" title="Go to top" ><!-- На верх --> <a class="w3-button w3-hover-theme" href="#myPage">
+    <i class="fa fa-chevron-circle-up w3-text-theme"></i></a></button>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-none" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars w3-text-theme"></i></a>
+  <a href="index.html" class="w3-bar-item w3-button w3-theme-d3 w3-hover-theme"><i class="fa fa-home w3-margin-right w3-text-theme"></i>Logo</a>
+  <a href="#" onclick="document.getElementById('id03').style.display='block'" class="w3-bar-item w3-button w3-hide-small w3-hover-theme w3-theme-action">Послуги</a>  
+  <a href="#menu" onclick="document.getElementById('menu').style.display='block'" class="w3-bar-item w3-button w3-hide-small w3-hover-theme w3-theme-action">Меню</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-theme w3-theme-action">Контакти</a>
+  <a href="#work" onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-red w3-hover-theme">Акції</a>
+    <div class="w3-dropdown-hover">
+    <button class="w3-button w3-hover-theme w3-theme-action w3-hide-small" title="Notifications">Банкетні зали<i class="fa fa-caret-down w3-text-theme"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="#" class="w3-bar-item w3-button w3-hover-theme w3-theme-action">Зал №1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-theme w3-theme-action">Зал №2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-theme w3-theme-action">Зал №3</a>
+    </div>
+  </div>
+  <!--  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-theme" title="Search"><i class="fa fa-search w3-text-theme w3-hover-text-theme"></i></a>-->
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#service" onclick="document.getElementById('id03').style.display='block'" class="w3-bar-item w3-button w3-hover-theme">Послуги</a>    
+    <a href="#menu" onclick="document.getElementById('menu').style.display='block'" class="w3-bar-item w3-button w3-hover-theme">Меню</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hover-theme">Контаки</a>
+	<!-- <a href="#work" onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button ">Акції</a> -->
+   <!--  <a href="#" class="w3-bar-item w3-button">Пошук</a> -->
+  </div>
+</div>
+  
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+	  <div class="w3-display-bottomleft w3-padding ">
+		<!-- <span class="w3-tag w3-xlarge w3-theme-d2">РЕСТОРАН</span>-->
+	  </div>
+	  <div class="w3-display-middle w3-center">
+		<span class="w3-text-white w3-hide-medium w3-hide-small" style="font-size:100px"><b>SAN REMO</b></span>
+		<span class="w3-text-white w3-hide-large w3-hide-small" style="font-size:80px"><b>SAN REMO</b></span>
+		<span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:100px"><b>SAN REMO</b></span>
+		<!--<p><a href="#menu" class="w3-button w3-xxlarge w3-camo-earth ">Замовити зал</a></p>-->
+		
+		<p><button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-camo-earth w3-round-large w3-xxlarge w3-hover-theme w3-hover-text-theme">Замовити зал</button></p>
+	  
+	  </div>
+  
+  
+  
+<!-- Sale -->  
+  <div class="w3-display-topright w3-padding" style="margin-top:40px">
+<!-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round-large w3-red w3-hover-theme w3-hover-text-theme">ОТРИМАЙ</br>ЗНИЖКУ!</br></button>  -->
+	
+	<img src="images/sale.png" alt="Avatar" onclick="document.getElementById('id01').style.display='block'" class="w3-btn w3-display-topright w3-hover-none w3-padding" >
+	
+</div>	 
+	 <!--<div class="w3-display-bottomright w3-padding w3-hide-small w3-hide-medium"> 	 
+
+	<div class="w3-rest w3-margin-top " style="height:450px;" >
+	 <div class="w3-panel">
+	<div class="w3-tag w3-xlarge w3-red">S</div>
+	<div class="w3-tag w3-xlarge">A</div>
+	<div class="w3-tag w3-xlarge w3-yellow">L</div>
+	<div class="w3-tag w3-xlarge">E</div>
+	</div>
+	  <div class="w3-card">
+	  <div class="w3-container w3-red">
+		<h1><b><span class="w3-tag w3-right w3-yellow">New!</span></b></h1>
+	  </div>
+	  <div class="w3-container w3-xlarge w3-white">
+		<p>The Newest<br>
+		<i><b>triple-action</b></i><br>
+		<span class="w3-xxlarge w3-text-red"><b>HOO</b></span></p>
+		<p><del>$400</del><br>
+		Now only $299 !!!</p>
+	  </div>
+	  <div class="w3-container w3-red">
+		<p class="w3-opacity">Contact: 555 555 555</p>
+	  </div>
+	  </div>
+	  </div>
+ </div> -->
+ </header> 
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:100%">
+
+<!-- Order form -->
+		  <div id="id02" class="w3-modal">
+			<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:100%">
+
+			  <div class="w3-center"><br>
+				<span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+				<img src="images/img_avatar4.png" alt="Avatar" style="width:15%" class="w3-circle w3-margin-top">
+			  </div>
+
+			  <form class="w3-container" action="/action_page.php">
+				<div class="w3-section">
+				  <label><b>Ваше ім'я</b></label>
+				  <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Введіть Ваше ім'я" name="usrname" required>
+				  <label><b>Ваш телефон</b></label>
+				  <input class="w3-input w3-border" type="password" placeholder="Введіть Ваш телефон" name="psw" required>
+				  <button class="w3-button w3-block w3-camo-earth w3-section w3-padding" type="submit">Замовити</button>          
+				</div>
+			  </form>
+
+			  <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+				<button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-button w3-red">Відмінити</button>        
+			  </div>
+			</div>
+		  </div>
+
+<!-- Menu-->
+<div id="menu" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-theme w3-display-container">
+      <span onclick="document.getElementById('menu').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Starters</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Tomato Soup <b>$2.50</b></h5>
+      <h5>Chicken Salad <b>$3.50</b></h5>
+      <h5>Bread and Butter <b>$1.00</b></h5>
+    </div>
+    <div class="w3-container w3-theme">
+      <h1>Main Courses</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Grilled Fish and Potatoes <b>$8.50</b></h5>
+      <h5>Italian Pizza <b>$5.50</b></h5>
+      <h5>Veggie Pasta <b>$4.00</b></h5>
+      <h5>Chicken and Potatoes <b>$6.50</b></h5>
+      <h5>Deluxe Burger <b>$5.00</b></h5>
+    </div>
+    <div class="w3-container w3-theme">
+      <h1>Desserts</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Fruit Salad <b>$2.50</b></h5>
+      <h5>Ice cream <b>$2.00</b></h5>
+      <h5>Chocolate Cake <b>$4.00</b></h5>
+      <h5>Cheese <b>$5.50</b></h5>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Sale-->
+ <div class="w3-container"> 
+  <div id="id01" class="w3-modal">
+	 <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+	  <header class="w3-container w3-theme"> 
+	   <span onclick="document.getElementById('id01').style.display='none'" 
+	   class="w3-button w3-theme w3-xlarge w3-display-topright">&times;</span>
+	   <h2>АКЦІЇ!</h2>
+	  </header>
+
+	  <div class="w3-bar w3-border-bottom">
+	   <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'London')">Акція 1</button>
+	   <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'Paris')">Акція 2</button>
+	   <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'Tokyo')">Акція 3</button>
+	  </div>
+
+	  <div id="London" class="w3-container city">
+	   <h1>London</h1>
+	   <p>London is the most populous city in the United Kingdom, with a metropolitan area of over 9 million inhabitants.</p>
+	   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	  </div>
+
+	  <div id="Paris" class="w3-container city">
+	   <h1>Paris</h1>
+	   <p>Paris is the capital of France.</p>
+	   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	  </div>
+
+	  <div id="Tokyo" class="w3-container city">
+	   <h1>Tokyo</h1>
+	   <p>Tokyo is the capital of Japan.</p><br>
+	  </div>
+
+	  <div class="w3-container w3-light-grey w3-padding">
+	   <button class="w3-button w3-right w3-white w3-border" 
+	   onclick="document.getElementById('id01').style.display='none'">
+	   Закрити</button>
+	  </div>
+	 </div>
+	</div>
+	<!-- Modal Sale END-->
+	</div>
+	
+	<!-- Modal Serice-->
+ <div class="w3-container"> 
+  <div id="id03" class="w3-modal">
+	 <div class="w3-modal-content w3-animate-zoom">
+	  <header class="w3-container w3-theme"> 
+	   <span onclick="document.getElementById('id03').style.display='none'" 
+	   class="w3-button w3-theme w3-xlarge w3-display-topright">&times;</span>
+	   <h2>Послуги</h2>
+	  </header>
+
+	  <div class="w3-bar w3-border-bottom">
+	   <button class="tablink2 w3-bar-item w3-button w3-theme-d3 w3-hover-theme" onclick="openCity2(event, 'London2')">Прикраса залу</button>
+	   <button class="tablink2 w3-bar-item w3-button w3-hover-theme" onclick="openCity2(event, 'Paris2')">Послуга 2</button>
+	   <button class="tablink2 w3-bar-item w3-button w3-hover-theme" onclick="openCity2(event, 'Tokyo2')">Послуга 3</button>
+	  </div>
+
+	  <div id="London2" class="w3-container city2">	   
+	   <!-- Grid for pricing tables -->
+    <h3 class="w3-padding-16">Прайс</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+          <li class="w3-theme w3-xlarge w3-padding-16">Базовий</li>
+          <li class="w3-padding-16">Прикраса залу</li>
+          <li class="w3-padding-16">Білі чохли на стільці</li>
+          <li class="w3-padding-16">Банти на стільці (12 найменувань квітів)</li>
+          <li class="w3-padding-16">Весільна скатертину в підлогу для нареченого і нареченої з екібани на столі</li>
+          <li class="w3-padding-16">
+            <h2>₴ 0 грн.</h2>
+           <!--  <span class="w3-opacity">per month</span> -->
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-theme-d4 w3-padding-large w3-hover-theme">Замовити</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+          <li class="w3-theme-d5 w3-xlarge w3-padding-16">Додатково</li>
+          <li class="w3-padding-16">Арка весільна - 1200-2000 грн</li>
+          <li class="w3-padding-16">Бутоньєрка (з квітами) - 150 грн</li>
+          <!-- <li class="w3-padding-16">50GB Storage</li>
+          <li class="w3-padding-16">Endless Support</li> -->
+          <li class="w3-padding-16">
+            <h2>₴ 2150 грн.</h2>
+            <!-- <span class="w3-opacity">per month</span> -->
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-theme-d4 w3-padding-large w3-hover-theme">Замовити</button>
+          </li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+	  </div>
+
+	  <div id="Paris2" class="w3-container city2">
+	   <h1>Послуга №2</h1>
+	   <p>Paris is the capital of France.</p>
+	   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	  </div>
+
+	  <div id="Tokyo2" class="w3-container city2">
+	   <h1>Послуга №3</h1>
+	   <p>Tokyo is the capital of Japan.</p><br>
+	  </div>
+
+	  <div class="w3-container w3-light-grey w3-padding">
+	   <button class="w3-button w3-right w3-white w3-border" 
+	   onclick="document.getElementById('id03').style.display='none'">
+	   Закрити</button>
+	  </div>
+	 </div>
+	</div>
+	<!-- Modal Service END-->
+	</div>
+	
+	
+<!-- News -->
+<!--<div class="w3-container w3-text-grey w3-center">
+    <h1>Новини</h1>
+  </div>-->
+  
+<!-- <div id="news">
+Blog entries
+<div class="w3-row">
+<div class="w3-col l6 s12">
+  Blog entry 1
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="images/1.png" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>НОВИНА №1</b></h3>
+      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
+        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <div class="w3-row">
+        <div class="w3-col l6 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>ДЕТАЛЬНІШЕ »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Коментарі  </b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr> 
+END BLOG ENTRIES 1
+</div>
+
+
+  <div class="w3-col l6 s12">-->
+  <!-- Blog entry 2
+  <!--<div class="w3-card-4 w3-margin w3-white">
+    <img src="images/2.png" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>НОВИНА №2</b></h3>
+      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
+        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <div class="w3-row">
+        <div class="w3-col l6 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>ДЕТАЛЬНІШЕ »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Коментарі  </b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+	</div>
+</div>
+</div> -->
+
+ <!-- Hals -->
+<div class="w3-container w3-text-grey w3-center">
+    <h1>Банкетні зали</h1>
+  </div>
+  
+  <div class="w3-row w3-grayscale"><br>
+
+<div class="w3-quarter">
+   <div class="w3-container">
+        <img src="images/1.png" style="width:100%">
+        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+		<p class="w3-container w3-text-grey w3-center"><a href="#jeans" class="w3-button w3-camo-earth w3-padding-large">Подробиці</a></p>
+      </div>     
+</div>
+
+<div class="w3-quarter">
+  <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="images/2.png" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+		<p class="w3-container w3-text-grey w3-center"><a href="#jeans" class="w3-button w3-camo-earth w3-padding-large">Подробиці</a></p>
+      </div>     
+</div>
+
+<div class="w3-quarter">
+  <div class="w3-container">
+        <img src="images/3.png" style="width:100%">
+        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+		<p class="w3-container w3-text-grey w3-center"><a href="#jeans" class="w3-button w3-camo-earth w3-padding-large">Подробиці</a></p>
+      </div>      
+</div>
+
+<div class="w3-quarter">
+  <div class="w3-container">
+        <img src="images/4.png" style="width:100%">
+        <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
+		<p class="w3-container w3-text-grey w3-center"><a href="#jeans" class="w3-button w3-camo-earth w3-padding-large">Подробиці</a></p>
+      </div>      
+</div>
+
+</div>
+
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-24" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="images/5.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="100%" height="750">
+    </div>
+
+    <div class="w3-col m6 ">
+      <h1 class="w3-center">Про нас</h1><br>
+      <h5 class="w3-center">Tradition since 1889</h5>
+      <p class="w3-large">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.We only use <span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+  
+    <!-- Video-->
+  
+   <!--<div class="w3-container w3-text-grey w3-center">
+    <h1>Відео</h1>
+  </div>
+  
+  <div class="w3-row w3-grayscale"><br>
+
+<div class="w3-quarter">
+   <div class="w3-container">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/RC9HUB2UHO8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>     
+</div>
+
+<div class="w3-quarter">
+  <div class="w3-container">
+         <iframe width="100%" height="315" src="https://www.youtube.com/embed/RC9HUB2UHO8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>     
+</div>
+
+<div class="w3-quarter">
+  <div class="w3-container">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/RC9HUB2UHO8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>      
+</div>
+
+<div class="w3-quarter">
+  <div class="w3-container">
+         <iframe width="100%" height="315" src="https://www.youtube.com/embed/RC9HUB2UHO8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>      
+</div>
+
+</div>-->
+  
+
+  <!-- Slideshow Header -->
+  <div class="w3-container" id="apartment">
+    <h2 class="w3-container w3-text-grey w3-center">Зали</h2>
+    <div class="w3-display-container mySlides">
+    <img src="images/livingroom.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p>Living Room</p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="images/diningroom.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p>Dining Room</p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="images/bedroom.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p>Bedroom</p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="images/livingroom.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p>Living Room II</p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="images/livingroom.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)" title="Living room">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="images/diningroom.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)" title="Dining room">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="images/bedroom.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)" title="Bedroom">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="images/livingroom.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)" title="Second Living Room">
+    </div>
+  </div> 
+  
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-theme w3-bottombar">Контакти</span></div>
+      <h3>Адреса</h3>
+      <p>Swing by for a cup of coffee, or whatever.</p>
+      <p><i class="fa fa-map-marker w3-text-theme w3-xlarge"></i>  Дніпро, UА</p>
+      <p><i class="fa fa-phone w3-text-theme w3-xlarge"></i>  +00 1515151515</p>
+      <p><i class="fa fa-envelope-o w3-text-theme w3-xlarge"></i>  test@test.com</p>
+    </div>
+    <div class="w3-col m7">
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+      <div class="w3-section">      
+        <label>Імя</label>
+        <input class="w3-input" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">      
+        <label>Email</label>
+        <input class="w3-input" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">      
+        <label>Текст</label>
+        <input class="w3-input" type="text" name="Message" required>
+      </div>        
+      <button type="submit" class="w3-button w3-right w3-theme-d4">Відправити</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<!-- <img src="images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">-->
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+ <footer class="w3-container w3-theme-d2 w3-padding-32 w3-center">
+  <h4>Слідуй за нами</h4>
+  <a class="w3-button w3-large w3-theme-d4" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="w3-button w3-large w3-theme-d4" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="w3-button w3-large w3-theme-d4" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-theme-d4" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-theme-d4 w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Powered by <a href="https://sitezavod.com" title="W3.CSS" target="_blank" class="w3-hover-opacity">sitezavod.com</a></p>
+
+  <!-- <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-theme-d4 w3-hide-small">На верх</span>   
+    <a class="w3-button" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up w3-text-theme"></i></span></a>
+  </div> -->
+</footer> 
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+//document.getElementById("myBtn").click();
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+// Sale
+document.getElementsByClassName("tablink")[0].click();
+
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].classList.remove("w3-light-grey");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.classList.add("w3-light-grey");
+}
+
+// Sale2
+document.getElementsByClassName("tablink2")[0].click();
+
+function openCity2(evt, cityName2) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city2");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks2 = document.getElementsByClassName("tablink2");
+  for (i = 0; i < x.length; i++) {
+    tablinks2[i].classList.remove("w3-light-grey");
+  }
+  document.getElementById(cityName2).style.display = "block";
+  evt.currentTarget.classList.add("w3-light-grey");
+}
+
+
+
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Slideshow Apartment Images
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 1500 || document.documentElement.scrollTop > 1500) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>
